@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Veg from './Veg';
 import Nonveg from './Nonveg';
 import Milk from './Milk';
@@ -10,7 +10,7 @@ import Home from './Home';
 
 
 //import Register from './components/Register';
-import { CartContext } from './contextapi/CartContext';
+
 import Cart from './Cart';
 import Checkout from './apis/Checkout';
 import Navbar from './components/Navbar';
@@ -19,7 +19,7 @@ import { ToastContainer } from 'react-toastify';
 //import Login from './components/Login';
 
 function App() {
-  const { cart } = useContext(CartContext);
+ 
   return (
     
       <BrowserRouter>

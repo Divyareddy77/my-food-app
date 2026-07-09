@@ -9,7 +9,7 @@ import {
   FaTimes,
   FaLeaf,
 } from "react-icons/fa";
-import Cart from "../Cart";
+
 import { CartContext } from "../contextapi/CartContext";
 
 function Navbar() {

@@ -4,9 +4,8 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Newsletter from "./components/Newsletter";
 import OfferBanner from "./components/OfferBanner";
-import Statistics from "./components/Statistics";
+
 import Testimonials from "./components/Testimonials";
-import WhyChooseUs from "./components/WhyChooseUs";
 
 
 function Home() {
