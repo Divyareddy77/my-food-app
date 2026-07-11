@@ -7,6 +7,8 @@ import {
   FaSearch,
   FaBars,
   FaTimes,
+  FaSignInAlt,
+  FaUserPlus,
 } from "react-icons/fa";
 
 import { CartContext } from "../contextapi/CartContext";
@@ -21,6 +23,16 @@ function Navbar() {
     const context = useContext(CartContext);
 
     const { cart } = context;
+    // reading the data from local storage 
+  const [loggedInUser] = useState(
+    JSON.parse(localStorage.getItem("loggedInUser") || "null")
+  );
+
+
+  const logout = () => {
+    localStorage.removeItem("loggedInUser");
+    window.location.reload();
+  }
 
   return (
     <>
@@ -160,6 +172,40 @@ hover:scale-105
             </NavLink>
 
           </div>
+          {loggedInUser ? (
+              <>
+                <span className="font-semibold">
+                  Welcome <b>{loggedInUser.name}</b>
+                </span>
+
+                <button
+                  onClick={logout}
+                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="menu-link"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <FaSignInAlt />
+                  Login
+                </Link>
+
+                <Link
+                  to="/register"
+                  className="menu-link"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <FaUserPlus />
+                  Register
+                </Link>
+              </>
+            )}
 
           {/* Search */}
 
@@ -233,7 +279,7 @@ shadow
 
             </Link>
 
-            <button
+            {/* <button
 className="
 w-12
 h-12
@@ -253,7 +299,7 @@ shadow-md
 
               <FaUserCircle />
 
-            </button>
+            </button> */}
 
           </div>
 

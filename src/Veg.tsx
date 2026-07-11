@@ -6,6 +6,7 @@ import type { Product } from './interfaces/Products';
 import { CartContext } from './contextapi/CartContext';
 import { toast } from 'react-toastify';
 import { FaStar } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
   
   interface customer{
     id : number
@@ -30,6 +31,7 @@ function Veg() {
   const context = useContext(CartContext);
   if (!context) return null;
   const { addToCart } = context;
+  const navigate = useNavigate();
   
   
   const vegItems: Product[] =[
@@ -226,6 +228,21 @@ leading-6">
 
     <button
   onClick={() => {
+    const loggedInUser = JSON.parse(
+      localStorage.getItem("loggedInUser") || "null"
+    );
+
+    if (!loggedInUser) {
+
+      toast.warning("Please login first!");
+
+      setTimeout(() => {
+        navigate("/Login");
+      }, 1500);
+
+      return;
+    }
+
     addToCart(veg);
     toast.success(`${veg.name} added to cart 🛒`,{autoClose : 2000});
     

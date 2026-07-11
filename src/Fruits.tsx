@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { CartContext } from "./contextapi/CartContext";
+import { useNavigate } from "react-router-dom";
 
 interface FruitItem {
   id: number;
@@ -16,6 +17,7 @@ function Fruits() {
   if (!context) return null;
 
   const { addToCart } = context;
+  const navigate = useNavigate();
 
   const fruits: FruitItem[] = [
     {
@@ -214,6 +216,21 @@ hover:border-orange-300
 
       <button
         onClick={() => {
+          const loggedInUser = JSON.parse(
+      localStorage.getItem("loggedInUser") || "null"
+    );
+
+    if (!loggedInUser) {
+
+      toast.warning("Please login first!");
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
+
+      return;
+    }
+
           addToCart(fruit);
           toast.success(`${fruit.name} added to cart 🍎`, {
             autoClose: 2000,

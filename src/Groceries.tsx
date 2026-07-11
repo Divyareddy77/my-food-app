@@ -3,6 +3,7 @@ import  { useContext } from 'react'
 import { CartContext } from './contextapi/CartContext';
 import { FaStar } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 interface GroceryItem {
   id: number;
   name: string;
@@ -15,6 +16,7 @@ function Groceries() {
   const context = useContext(CartContext);
   if (!context) return null;  
   const { addToCart } = context;
+  const navigate = useNavigate();
 
   const groceryItems: GroceryItem[] = [
   {
@@ -136,6 +138,21 @@ leading-6
 
     <button
   onClick={() => {
+    const loggedInUser = JSON.parse(
+      localStorage.getItem("loggedInUser") || "null"
+    );
+
+    if (!loggedInUser) {
+
+      toast.warning("Please login first!");
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
+
+      return;
+    }
+
     addToCart(grocery);
     toast.success(`${grocery.name} added to cart 🛒`, {
       autoClose: 2000,

@@ -17,10 +17,13 @@ import Navbar from './components/Navbar';
 import { ToastContainer } from 'react-toastify';
 import Fruits from './Fruits';
 import Orders from './components/Order';
+import Login from './components/Login';
+import Register from './components/Register';
 
 //import Login from './components/Login';
 
 function App() {
+  
  
   return (
     
@@ -94,6 +97,9 @@ function App() {
             <Route path="/Cart" element={<Cart />} />
             <Route path='/Checkout' element={<Checkout/>}/>
             <Route path='/Orders' element={<Orders/>}/>
+            <Route path='/Login' element={<Login/>}/>
+            <Route path='/Register' element={<Register/>}/>
+            
             {/* <Route path="/Register" element ={<Register/>}/>
             <Route path="/Login" element={<Login />}/> */}
           </Routes>
@@ -106,7 +112,7 @@ function App() {
   pauseOnHover={false}
   pauseOnFocusLoss={false}
   draggable
-  theme="colored"
+  theme="light"
 />
 
         </div>
