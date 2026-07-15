@@ -167,28 +167,28 @@ let listItems = groceryItems.map((grocery) => (
     className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
     
     <div className="px-4 pt-4">
-  <span className="inline-block bg-purple-100 text-purple-500 text-xs font-semibold px-3 py-1 rounded-md">
+  <span className="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-md">
     DAILY ESSENTIAL
   </span>
 </div>
 
-    <div className="flex justify-center py-5">
+    <div className="flex justify-center items-center h-52 py-4">
   <img
     src={grocery.imageurl}
     alt={grocery.name}
-    className="w-48 h-48 object-contain hover:scale-110 transition-transform duration-300"
+    className="w-44 h-44 object-cover rounded-xl hover:scale-110 transition duration-300"
   />
 </div>
 <div className="flex justify-between items-center px-4">
 
-  <span className="text-purple-500 text-xs font-semibold">
+  <span className="text-orange-500 text-xs font-semibold">
     ⚡ 10 MINS
-  </span>
+</span>
 
   <div className="flex items-center gap-1 text-yellow-500 text-sm">
-    <FaStar size={12}/>
+    <FaStar size={12} />
     <span>4.5</span>
-  </div>
+</div>
 
 </div>
 
@@ -204,12 +204,15 @@ let listItems = groceryItems.map((grocery) => (
 
   <div className="flex justify-between items-center mt-5">
 
-    <h2 className="text-3xl font-bold text-purple-400">
-      ₹{grocery.price}
-      <span className="text-base font-medium text-gray-500">
-        /kg
-      </span>
-    </h2>
+   <h2 className="text-3xl font-bold">
+            ₹{grocery.price}
+            <span className="text-base font-medium text-gray-500">
+                /kg
+            </span>
+        </h2>
+      
+      
+  
 
     <button
       onClick={() => {
@@ -233,7 +236,7 @@ let listItems = groceryItems.map((grocery) => (
           autoClose: 2000,
         });
       }}
-      className="border-2 border-purple-400 text-purple-500 font-bold px-7 py-2 rounded-lg hover:bg-purple-400 hover:text-white transition"
+      className="border-2 border-orange-400 text-orange-500 font-bold px-7 py-2 rounded-lg hover:bg-orange-400 hover:text-white transition"
     >
       ADD +
     </button>
@@ -247,7 +250,6 @@ let listItems = groceryItems.map((grocery) => (
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-6">
       <div className="bg-white border border-gray-200 rounded-3xl p-10 mb-10 shadow-sm text-center">
-
     <h1 className="text-5xl font-bold text-gray-800">
         🛒 Grocery Essentials
     </h1>

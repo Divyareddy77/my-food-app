@@ -173,11 +173,11 @@ function Fruits() {
 </div>
 
       
-      <div className="flex justify-center py-5">
+      <div className="flex justify-center items-center h-52 py-4">
   <img
     src={fruit.imageurl}
     alt={fruit.name}
-    className="w-48 h-48 object-contain hover:scale-110 transition duration-300"
+    className="w-44 h-44 object-cover rounded-xl hover:scale-110 transition duration-300"
   />
 </div>
 

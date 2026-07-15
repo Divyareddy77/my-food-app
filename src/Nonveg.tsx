@@ -168,29 +168,28 @@ function Nonveg() {
     className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
     
     <div className="px-4 pt-4">
-  <span className="inline-block bg-red-100 text-red-400 text-xs font-semibold px-3 py-1 rounded-md">
-    FARM FRESH
-  </span>
+  <span className="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-md">
+    FRESH CUT
+</span>
 </div>
 
-    <div className="flex justify-center py-5">
+    <div className="flex justify-center items-center h-52 py-4">
   <img
     src={nonveg.imageurl}
     alt={nonveg.name}
-    className="w-48 h-48 object-contain hover:scale-110 transition duration-300"
+    className="w-44 h-44 object-cover rounded-xl hover:scale-110 transition duration-300"
   />
 </div>
  <div className="flex justify-between items-center px-4">
 
-  <span className="text-red-400 text-xs font-semibold">
+  <span className="text-orange-500 text-xs font-semibold">
     ⚡ 10 MINS
-  </span>
+</span>
 
   <div className="flex items-center gap-1 text-yellow-500 text-sm">
-    <FaStar size={12}/>
+    <FaStar size={12} />
     <span>4.5</span>
-  </div>
-
+</div>
 </div>
 
 
@@ -207,12 +206,12 @@ function Nonveg() {
 
   <div className="flex justify-between items-center mt-5">
 
-    <h2 className="text-3xl font-bold text-red-400">
-      ₹{nonveg.price}
-      <span className="text-base font-medium text-gray-500">
-        /kg
-      </span>
-    </h2>
+    <h2 className="text-3xl font-bold">
+            ₹{nonveg.price}
+            <span className="text-base font-medium text-gray-500">
+                /kg
+            </span>
+        </h2>
 
     <button
       onClick={() => {
@@ -236,7 +235,7 @@ function Nonveg() {
           autoClose: 2000,
         });
       }}
-      className="border-2 border-red-400 text-red-500 font-bold px-7 py-2 rounded-lg hover:bg-red-400 hover:text-white transition"
+      className="border-2 border-orange-400 text-orange-500 font-bold px-7 py-2 rounded-lg hover:bg-orange-400 hover:text-white transition"
     >
       ADD +
     </button>
@@ -249,7 +248,7 @@ function Nonveg() {
   return (
     <>
     <div className="bg-white border border-gray-200 rounded-3xl p-10 mb-10 shadow-sm text-center">
-  <h1 className="text-5xl font-bold text-gray-800">
+    <h1 className="text-5xl font-bold text-gray-800">
     🍗 Premium Non-Veg Collection
   </h1>
 

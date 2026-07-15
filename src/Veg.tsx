@@ -197,13 +197,13 @@ function Veg() {
   </div>
 
   {/* Image */}
-  <div className="flex justify-center py-4">
-    <img
-      src={veg.imageurl}
-      alt={veg.name}
-      className="w-44 h-44 object-contain hover:scale-110 transition duration-300"
-    />
-  </div>
+  <div className="flex justify-center items-center h-52 py-4">
+  <img
+    src={veg.imageurl}
+    alt={veg.name}
+    className="w-44 h-44 object-cover rounded-xl"
+  />
+</div>
 
   {/* Rating */}
   <div className="flex justify-between items-center px-4">

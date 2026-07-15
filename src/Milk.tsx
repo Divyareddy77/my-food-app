@@ -167,28 +167,28 @@ let listItems = milkItems.map((milk) => (
   className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
 >
     <div className="px-4 pt-4">
-    <span className="inline-block bg-indigo-100 text-indigo-400 text-xs font-semibold px-3 py-1 rounded-md">
-    FARM FRESH
+    <span className="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-md">
+    PURE DAIRY
 </span>
 </div>
     
 
-    <div className="flex justify-center py-5">
-    <img
-        src={milk.imageurl}
-        alt={milk.name}
-        className="w-48 h-48 object-contain hover:scale-110 transition-transform duration-300"
-    />
+    <div className="flex justify-center items-center h-52 py-4">
+  <img
+    src={milk.imageurl}
+    alt={milk.name}
+    className="w-44 h-44 object-cover rounded-xl hover:scale-110 transition duration-300"
+  />
 </div>
 <div className="flex justify-between items-center px-4">
 
-   <span className="text-indigo-400 text-xs font-semibold">
+   <span className="text-orange-500 text-xs font-semibold">
     ⚡ 10 MINS
 </span>
     <div className="flex items-center gap-1 text-yellow-500 text-sm">
-        <FaStar size={12}/>
-        <span>4.5</span>
-    </div>
+    <FaStar size={12} />
+    <span>4.5</span>
+</div>
 
 </div>
 
@@ -204,12 +204,13 @@ let listItems = milkItems.map((milk) => (
 
     <div className="flex justify-between items-center mt-5">
 
-       <h2 className="text-3xl font-bold text-indigo-400">
+       <h2 className="text-3xl font-bold">
             ₹{milk.price}
             <span className="text-base font-medium text-gray-500">
                 /kg
             </span>
         </h2>
+
 
         <button
             onClick={() => {
@@ -233,7 +234,7 @@ let listItems = milkItems.map((milk) => (
                     autoClose: 2000,
                 });
             }}
-            className="border-2 border-indigo-400 text-indigo-500 font-bold px-7 py-2 rounded-lg hover:bg-indigo-400 hover:text-white transition"
+            className="border-2 border-orange-400 text-orange-500 font-bold px-7 py-2 rounded-lg hover:bg-orange-400 hover:text-white transition"
         >
             ADD +
         </button>
@@ -256,7 +257,6 @@ let listItems = milkItems.map((milk) => (
     <p className="mt-3 text-gray-500">
         Pure • Fresh • Healthy • Delivered Daily
     </p>
-
 </div>
      <ol className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-6">
     {listItems}
